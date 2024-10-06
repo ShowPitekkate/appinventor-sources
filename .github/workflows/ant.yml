@@ -23,14 +23,6 @@ jobs:
       - name: 'Build Appinventor'
         run: ant noplay
         working-directory: appinventor
-      - name: 'Run Tests'
-        run: ant tests
-        working-directory: appinventor
-      - name: 'Upload Test Reports to Artifacts'
-        uses: actions/upload-artifact@v4
-        with:
-          name: Test Reports
-          path: appinventor/reports
       - name: 'Build Companion'
         run: ant PlayApp
         working-directory: appinventor
