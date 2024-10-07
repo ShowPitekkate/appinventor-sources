@@ -17,6 +17,11 @@ jobs:
         run: git submodule update --init --recursive
       - name: 'Install 32-bit dependencies'
         run: sudo apt-get install -y libc6-i386 lib32z1 lib32stdc++6
+      - name: 'Upload Sources to Artifacts'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Sources AI
+          path: ./
       - name: 'Make Auth Key'
         run: ant MakeAuthKey
         working-directory: appinventor
